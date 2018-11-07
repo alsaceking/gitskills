@@ -40,3 +40,4 @@ Git鼓励大量使用分支
 删除分支：git branch -d <name>
 
 分支冲突
+用git log --graph命令可以看到分支合并图
