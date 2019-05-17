@@ -48,8 +48,8 @@
             width: 128px;
             background-size: cover;
             border-radius: 200px;
-            box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
-            border: 3px solid #00a0ff;
+            box-shadow: 0px 0px 40px rgba(236, 155, 238, 0.72);
+            border: 3px solid #f074ad;
             opacity: 1;
             margin: 0 auto;
             margin-top: 20px;
@@ -78,7 +78,7 @@
 
         .text {
             position: fixed;
-            bottom: 80px;
+            bottom: 20px;
             text-align: center;
             width: 100%;
             font-weight: bold;
@@ -105,7 +105,7 @@
     <br/>
     <span id="span_dt_dt"></span>
 </p>
-<audio autoplay="autoplay" loop="loop" src="http://m10.music.126.net/20190517135431/435f059d79ac6566451b2e25f385aeff/ymusic/348c/3689/c2fd/a437a4329060900f911e971d579ef400.mp3"></audio>
+<audio autoplay="autoplay" loop="loop" src="./music/klcc.mp3"></audio>
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
@@ -133,7 +133,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
 			//想说的话
-            S.UI.simulate("琛琛|要一直|开开|心心|->|爱你的|臭臭|#countdown 3|k❤c");
+            S.UI.simulate("琛琛|要一直|开开|心心|->|爱你的|臭臭|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -200,10 +200,10 @@
             cmd = '#';
 
         function formatTime(date) {
-            var h = date.getHours(),
-                m = date.getMinutes(),
-                m = m < 10 ? '0' + m : m;
-            return h + ':' + m;
+            var m = date.getMonth() + 1,
+                d = date.getDate()
+                // d = d < 10 ? '0' + d : d;
+            return 5 + ':' + 20;
         }
 
         function getValue(value) {
@@ -340,7 +340,7 @@
         this.e = 0.07;
         this.s = true;
         // ------------------------------------------------------- setColor
-        this.c = new S.Color(255, 255, 255, this.p.a);
+        this.c = new S.Color(236, 86, 145, this.p.a);
 
         this.t = this.clone();
         this.q = [];
