@@ -77,8 +77,9 @@
         }
 
         .text {
+            margin: 0;
             position: fixed;
-            bottom: 20px;
+            bottom: 80px;
             text-align: center;
             width: 100%;
             font-weight: bold;
@@ -91,6 +92,17 @@
             width: 100%;
             font-weight: bold;
         }
+        .audio-wrap {
+            position: fixed;
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+        }
+        .big-font {
+            padding: 0 10px;
+            font-size: 24px;
+            color: #fff;
+        }
     </style>
 
 </head>
@@ -100,12 +112,14 @@
     <img src="./img/cc.jpg" id="logo">
 </div>
 <canvas class="canvas" width="414" height="905"></canvas>
-<p class="text" style="color: #ed3073;">
+<p class="text" style="color: #dc67ac;">
     从相遇到相知已经
     <br/>
     <span id="span_dt_dt"></span>
 </p>
-<audio autoplay="autoplay" loop="loop" src="./music/klcc.mp3"></audio>
+<div class="audio-wrap">
+    <audio id="audioWrap" controls="controls" autoplay="autoplay" loop="loop" src="./music/klcc.mp3"></audio>
+</div>
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
@@ -122,18 +136,23 @@
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold = Math.floor((e_hrsold - hrsold) * 60);
         seconds = Math.floor((e_minsold - minsold) * 60);
-        span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        span_dt_dt.innerHTML = daysold + "<span class='big-font'>天</span>" + hrsold + "<span class='big-font'>小时</span>" + minsold + "<span class='big-font'>分</span>" + seconds + "<span class='big-font'>秒</span>";
     }
 
     show_date_time();
 </script>
 <script>
+    // let audioWrap = document.getElementById('audioWrap');
+    // audioWrap.addEventListener("canplay", function () {
+    //     console.log(audioWrap.duration)
+    // });
+
     var S = {
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
 			//想说的话
-            S.UI.simulate("琛琛|要一直|开开|心心|->|爱你的|臭臭|#countdown 3|#time");
+            S.UI.simulate("琛琛|想|和你在|斜阳里|肆意|微笑|在|小湖边|迎着|晚风|悠然|漫步|和你|走遍|徐州的|大街|小巷|一直|一直|走下去|真的|真的|很|爱你|多想|伴你|韶华|白首|有好多|话|想与你|说|24号|下午见|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
