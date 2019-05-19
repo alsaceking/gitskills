@@ -5,6 +5,7 @@
     <title>JYK ❤ CC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
     <style>
         html {
@@ -84,6 +85,14 @@
             width: 100%;
             font-weight: bold;
         }
+        .title-text {
+            margin: 0;
+            position: fixed;
+            bottom: 160px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+        }
 
         .text-right {
             position: fixed;
@@ -112,6 +121,11 @@
     <img src="./img/cc.jpg" id="logo">
 </div>
 <canvas class="canvas" width="414" height="905"></canvas>
+<p class="title-text">
+     深谷雨瀚千里江陵,相思始觉山海不及。
+    <br/>
+     余生如若卿未相伴,锦瑟年华谁能与度。
+</p>
 <p class="text" style="color: #dc67ac;">
     从相遇到相知已经
     <br/>
@@ -152,7 +166,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
 			//想说的话
-            S.UI.simulate("琛琛|想|和你在|斜阳里|肆意|微笑|在|小湖边|迎着|晚风|悠然|漫步|和你|走遍|徐州的|大街|小巷|一直|一直|走下去|真的|真的|很|爱你|多想|伴你|韶华|白首|有好多|话|想与你|说|24号|下午见|#countdown 3|#time");
+            S.UI.simulate("琛琛|想|和你在|斜阳里|肆意|微笑。|在|小湖边|迎着|晚风|悠然|漫步。|和你|走遍|徐州的|大街|小巷|一直|一直|走下去。|真的|真的|好|爱你|多想|伴你|韶华|白首|有好多|话|想与你|说|24号|下午见|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -222,7 +236,7 @@
             var m = date.getMonth() + 1,
                 d = date.getDate()
                 // d = d < 10 ? '0' + d : d;
-            return 5 + ':' + 20;
+            return m + ':' + d;
         }
 
         function getValue(value) {
@@ -313,7 +327,7 @@
                     default:
                         S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'HacPai' : current));
                 }
-            }, 2000, sequence.length);
+            }, 2800, sequence.length);
         }
 
         return {
